@@ -1,8 +1,5 @@
-import axios from 'axios';
+import { Octokit } from 'octokit';
 
-export const mockApi = axios.create({
-  baseURL: 'https://61cb1117194ffe0017788b4d.mockapi.io/api',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+export const octokit = new Octokit({
+  auth: process.env.NEXT_PUBLIC_TOKEN_API,
 });

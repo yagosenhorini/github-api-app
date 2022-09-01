@@ -1,7 +1,7 @@
 import React from 'react';
 
-export type InputProps = {
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   type: string;
   testId: string;
   name: string;
@@ -9,8 +9,4 @@ export type InputProps = {
   error?: string;
   success?: string;
   placeholder: string;
-};
-
-// export type InputType = InputProps &
-//   React.HTMLProps<HTMLInputElement> &
-//   React.HTMLAttributes<HTMLInputElement>;
+}

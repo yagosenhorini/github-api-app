@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks/pure';
+
 import useResponsive from '@Hooks/useResponsive';
 
 jest.mock('react-responsive');

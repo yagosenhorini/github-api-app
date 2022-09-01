@@ -1,8 +1,8 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-import LoginPage from '@Pages/Login';
+import HomePage from '@Pages/Home';
 
-const Login: NextPage = () => <LoginPage />;
+const Home: NextPage = () => <HomePage />;
 
-export default Login;
+export default Home;

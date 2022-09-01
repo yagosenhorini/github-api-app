@@ -7,18 +7,18 @@ import Header from '@Containers/Header';
 
 import { GlobalStyle } from '@Theme/GlobalStyle';
 import { GlobalTheme as theme } from '@Theme/GlobalTheme';
-import { AuthProvider } from '@/contexts/AuthContext';
+import { GithubProvider } from '@Contexts/GithubContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AuthProvider>
+    <GithubProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header />
         <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
-    </AuthProvider>
+    </GithubProvider>
   );
 }
 
