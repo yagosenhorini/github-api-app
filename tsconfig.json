@@ -18,7 +18,6 @@
     "baseUrl": "./",
     "noImplicitAny": false,
     "paths": {
-      "@/*": ["./src/*"],
       "@Components/*": ["./src/components/*"],
       "@Containers/*": ["./src/containers/*"],
       "@Constants/*": ["./src/constants/*"],
