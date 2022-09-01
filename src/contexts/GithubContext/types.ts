@@ -1,11 +1,7 @@
 import React from 'react';
 
-export type AuthProps = {
+export type ContextProps = {
   children: React.ReactNode;
-  user?: {
-    email: string;
-    name: string;
-  };
 };
 
 export type IDispatchProps = {
