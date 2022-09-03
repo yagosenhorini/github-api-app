@@ -51,7 +51,9 @@ const SearchContainer = () => {
         />
         {isError && <S.ErrorMessage>Usuário não encontrado</S.ErrorMessage>}
         <S.SubmitButtonWrapper>
-          <Button type="submit">{isLoading ? 'Enviando...' : 'Enviar'}</Button>
+          <Button data-testid="submit-button" type="submit">
+            {isLoading ? 'Enviando...' : 'Enviar'}
+          </Button>
         </S.SubmitButtonWrapper>
       </Form>
     </S.SearchContainerWrapper>
