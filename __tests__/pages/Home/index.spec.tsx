@@ -3,14 +3,14 @@ import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
 import Home from '@Pages/Home';
+import theme from '@Theme/index';
 
-import { GlobalTheme } from '@Theme/GlobalTheme';
 import { GithubProvider } from '@Contexts/GithubContext';
 
 describe('<Home />', () => {
   const componentToRender = (
     <GithubProvider>
-      <ThemeProvider theme={GlobalTheme}>
+      <ThemeProvider theme={theme}>
         <Home />
       </ThemeProvider>
     </GithubProvider>

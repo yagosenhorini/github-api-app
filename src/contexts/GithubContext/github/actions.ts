@@ -29,13 +29,13 @@ export const setRepos = (repos: GithubResponseProps) => ({
 export const getRepos =
   (term: string) => async (dispatch: React.Dispatch<any>) => {
     await dispatch(setLoading(true));
+    await dispatch(setError(false));
     try {
       const { data } = await octokit.request(`GET /users/${term}/repos`);
       const orderedData = orderByDate(data);
       await dispatch(setRepos(orderedData));
     } catch (err) {
       await dispatch(setError(true));
-      throw new Error('Failed to get user repo or user not found');
     } finally {
       await dispatch(setLoading(false));
     }

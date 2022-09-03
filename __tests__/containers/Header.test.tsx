@@ -3,12 +3,12 @@ import { ThemeProvider } from 'styled-components';
 
 import Header from '@Containers/Header';
 
-import { GlobalTheme } from '@Theme/GlobalTheme';
+import theme from '@Theme/index';
 
 describe('Header component', () => {
   it('should render the Header component', () => {
     const component = render(
-      <ThemeProvider theme={GlobalTheme}>
+      <ThemeProvider theme={theme}>
         <Header />
       </ThemeProvider>
     );
