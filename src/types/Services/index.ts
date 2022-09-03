@@ -8,10 +8,10 @@ export type GithubResponseProps = {
     id: number;
     avatar_url: string;
     url: string;
-    html_url: string;
   };
-  created_at: Date | string;
-  updated_at: Date | string;
-  pushed_at: Date | string;
+  created_at: Date;
+  updated_at: Date;
+  pushed_at: Date;
+  html_url: string;
   language: string;
 }[];

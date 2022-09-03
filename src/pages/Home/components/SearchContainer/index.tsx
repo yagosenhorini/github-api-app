@@ -1,22 +1,33 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldErrors, useForm } from 'react-hook-form';
 
 import Form from '@Components/Form';
 import Button from '@Components/Button';
 import Input from '@Components/Form/components/Input';
 
-import { useGithubDispatch, getRepos } from '@Contexts/GithubContext';
+import {
+  useGithubDispatch,
+  getRepos,
+  useGithubState,
+} from '@Contexts/GithubContext';
+
+import { GitForm } from '@Types/Form';
 
 import * as S from './styled';
 
 const SearchContainer = () => {
-  const { handleSubmit } = useForm();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<GitForm, FieldErrors>();
   const dispatch = useGithubDispatch();
+  const { isError, isLoading } = useGithubState();
 
   const [term, setTerm] = useState('');
 
-  const handleChange = async () => {
-    await dispatch(getRepos(term));
+  const submit = async () => {
+    dispatch(getRepos(term));
   };
 
   const handleSetTerm = ({ currentTarget }) => {
@@ -25,16 +36,23 @@ const SearchContainer = () => {
 
   return (
     <S.SearchContainerWrapper>
-      <Form onSubmit={handleSubmit(handleChange)}>
+      <Form onSubmit={handleSubmit(submit)}>
         <Input
+          {...register('repoInput', {
+            required: 'Campo obrigatório',
+          })}
           onChange={(ev) => handleSetTerm(ev)}
           type="text"
           testId="digitable-term"
-          name="repo-term"
-          id="repo-term"
-          placeholder="Please type the name of owner"
+          name="repoInput"
+          id="repoInput"
+          placeholder="Digite o nome do usuário que deseja buscar"
+          error={errors?.repoInput?.type}
         />
-        <Button type="submit">Enviar</Button>
+        {isError && <S.ErrorMessage>Usuário não encontrado</S.ErrorMessage>}
+        <S.SubmitButtonWrapper>
+          <Button type="submit">{isLoading ? 'Enviando...' : 'Enviar'}</Button>
+        </S.SubmitButtonWrapper>
       </Form>
     </S.SearchContainerWrapper>
   );

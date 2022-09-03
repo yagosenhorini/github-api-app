@@ -30,6 +30,7 @@
       "@Pages/*": ["./src/pages/*"],
       "@Resources/*": ["./src/resources/*"],
       "@Services/*": ["./src/services/*"],
+      "@Settings/*": ["./src/settings/*"],
       "@Store/*": ["./src/store/*"],
       "@Theme/*": ["./src/theme/*"],
       "@Types/*": ["./src/types/*"],

@@ -1,15 +1,16 @@
+import { rem } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   * {
-    margin: ${({ theme }) => theme.margin};
-    padding: ${({ theme }) => theme.padding};
-    box-sizing: ${({ theme }) => theme.boxSizing};
-    outline: ${({ theme }) => theme.outline};
-    font-family: ${({ theme }) => theme.fontPrimary};
+    margin: ${rem(0)};
+    padding: ${rem(0)};
+    box-sizing: border-box;
+    outline: none;
+    font-family: ${({ theme }) => theme.fonts.fontPrimary};
   }
 
   body {
-    background-color: ${({ theme }) => theme.colors.main};
+    background-color: ${({ theme }) => theme.colors.gray};
   }
 `;

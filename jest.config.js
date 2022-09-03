@@ -90,6 +90,7 @@ module.exports = {
     '@Theme/(.*)': '<rootDir>/src/theme/$1',
     '@Icons/(.*)': '<rootDir>/src/icons/$1',
     '@Services/(.*)': '<rootDir>/src/services/$1',
+    '@Settings/(.*)': '<rootDir>/src/settings/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
