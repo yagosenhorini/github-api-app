@@ -13,7 +13,7 @@ const Timeline = () => {
   if (isError || !repos?.length) return null;
 
   return (
-    <S.TimelineWrapper>
+    <S.TimelineWrapper data-testid="timeline-section">
       {repos.map(({ name, owner, created_at, updated_at, html_url, id }) => (
         <>
           <S.TimelineIconWrapper />
